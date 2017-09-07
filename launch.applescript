@@ -10,6 +10,7 @@
 # - service-prize-draw
 # - service-stock
 # - service-thank-you
+# - service-profile
 #
 # As well as these apps:
 #
@@ -61,6 +62,12 @@ tell application "iTerm"
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
 			write text "cd " & PWD & "/app-cms ;  npm start"
+
+			# pane
+			tell application "System Events" to key code 2 using {command down}
+			set currentCount to currentCount + 1
+			write text "echo debug " & currentCount
+			write text "cd " & PWD & "/service-profile ;  ./gradlew -x dependencyCheck -x test startServer"
 
 			# jump vertically and create new pane
 			tell application "System Events" to key code 30 using {command down}
