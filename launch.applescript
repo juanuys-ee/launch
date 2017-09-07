@@ -11,6 +11,7 @@
 # - service-stock
 # - service-thank-you
 # - service-profile
+# - service-reporting
 #
 # As well as these apps:
 #
@@ -101,6 +102,12 @@ tell application "iTerm"
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
 			write text "cd " & PWD & "/service-thank-you ;  ./gradlew -x dependencyCheck -x test startServer"
+
+			# pane
+			tell application "System Events" to key code 2 using {command down}
+			set currentCount to currentCount + 1
+			write text "echo debug " & currentCount
+			write text "cd " & PWD & "/service-reporting ;  ./gradlew -x dependencyCheck -x test startServer"
 
 		end tell
 	end tell
