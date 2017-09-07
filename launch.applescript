@@ -28,7 +28,7 @@ tell application "iTerm"
 			# pane
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/service-cms && docker-compose up"
+			write text "cd " & PWD & "/service-cms ;  docker-compose up"
 
 			# create horizontal pane below
 			tell application "System Events" to key code 2 using {command down, shift down}
@@ -36,31 +36,31 @@ tell application "iTerm"
 			# pane
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/service-cms && ./gradlew -x dependencyCheck -x test startServer"
+			write text "cd " & PWD & "/service-cms ;  ./gradlew -x dependencyCheck -x test startServer"
 
 			# pane
 			tell application "System Events" to key code 2 using {command down}
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/service-authentication && ./gradlew -x dependencyCheck -x test startServer"
+			write text "cd " & PWD & "/service-authentication ;  ./gradlew -x dependencyCheck -x test startServer"
 
 			# pane
 			tell application "System Events" to key code 2 using {command down}
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/service-content && ./gradlew -x dependencyCheck -x test startServer"
+			write text "cd " & PWD & "/service-content ;  ./gradlew -x dependencyCheck -x test startServer"
 
 			# pane
 			tell application "System Events" to key code 2 using {command down}
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/service-gateway && ./gradlew -x dependencyCheck -x test startServer"
+			write text "cd " & PWD & "/service-gateway ;  ./gradlew -x dependencyCheck -x test startServer"
 
 			# pane
 			tell application "System Events" to key code 2 using {command down}
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/app-cms && npm start"
+			write text "cd " & PWD & "/app-cms ;  npm start"
 
 			# jump vertically and create new pane
 			tell application "System Events" to key code 30 using {command down}
@@ -69,31 +69,31 @@ tell application "iTerm"
 			# pane
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/service-location && ./gradlew -x dependencyCheck -x test startServer"
+			write text "cd " & PWD & "/service-location ;  ./gradlew -x dependencyCheck -x test startServer"
 
 			# pane
 			tell application "System Events" to key code 2 using {command down}
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/service-prize-draw && ./gradlew -x dependencyCheck -x test startServer"
+			write text "cd " & PWD & "/service-prize-draw ;  ./gradlew -x dependencyCheck -x test startServer"
 
 			# pane
 			tell application "System Events" to key code 2 using {command down}
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/service-stock && ./gradlew -x dependencyCheck -x test startServer"
+			write text "cd " & PWD & "/service-stock ;  ./gradlew -x dependencyCheck -x test startServer"
 
 			# pane
 			tell application "System Events" to key code 2 using {command down}
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/app-web && NODE_ENV=localdev yarn run develop"
+			write text "cd " & PWD & "/app-web ;  NODE_ENV=localdev yarn run develop"
 
 			# pane
 			tell application "System Events" to key code 2 using {command down}
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/service-thank-you && ./gradlew -x dependencyCheck -x test startServer"
+			write text "cd " & PWD & "/service-thank-you ;  ./gradlew -x dependencyCheck -x test startServer"
 
 		end tell
 	end tell
