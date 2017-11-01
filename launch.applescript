@@ -70,6 +70,19 @@ tell application "iTerm"
 			write text "echo debug " & currentCount
 			write text "cd " & PWD & "/service-profile ;  ./gradlew -x dependencyCheck -x test startServer"
 
+			# pane
+			tell application "System Events" to key code 2 using {command down}
+			set currentCount to currentCount + 1
+			write text "echo debug " & currentCount
+			write text "cd " & PWD & "/service-rewards ;  ./gradlew -x dependencyCheck -x test startServer"
+
+			# pane
+			tell application "System Events" to key code 2 using {command down}
+			set currentCount to currentCount + 1
+			write text "echo debug " & currentCount
+			write text "cd " & PWD & "/infra-soa-stubs ; docker run -it --rm -p 8081:8080 --name stubs -v $(pwd)/stub:/home/wiremock infra/soa-stubs:latest"
+
+
 			# jump vertically and create new pane
 			tell application "System Events" to key code 30 using {command down}
 			tell application "System Events" to key code 2 using {command down}
@@ -108,6 +121,13 @@ tell application "iTerm"
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
 			write text "cd " & PWD & "/service-reporting ;  ./gradlew -x dependencyCheck -x test startServer"
+
+			# pane
+			tell application "System Events" to key code 2 using {command down}
+			set currentCount to currentCount + 1
+			write text "echo debug " & currentCount
+			write text "cd " & PWD & "/service-soa-cache ;  ./gradlew -x dependencyCheck -x test startServer"
+
 
 		end tell
 	end tell
