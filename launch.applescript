@@ -126,7 +126,7 @@ tell application "iTerm"
 			tell application "System Events" to key code 2 using {command down}
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/service-soa-cache ;  ./gradlew -x dependencyCheck -x test startServer"
+			write text "cd " & PWD & "/service-soa-cache ;  ./gradlew -x startManagedMongoDb -x dependencyCheck -x test startServer"
 
 
 		end tell
