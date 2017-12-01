@@ -109,7 +109,7 @@ tell application "iTerm"
 			tell application "System Events" to key code 2 using {command down}
 			set currentCount to currentCount + 1
 			write text "echo debug " & currentCount
-			write text "cd " & PWD & "/app-web ;  NODE_ENV=localdev yarn run develop"
+			write text "cd " & PWD & "/app-web ;  PRIORITY_ENV=localhost yarn run develop"
 
 			# pane
 			tell application "System Events" to key code 2 using {command down}
